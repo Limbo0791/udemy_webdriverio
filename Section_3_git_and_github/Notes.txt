@@ -70,5 +70,25 @@ We can ignore these with git ignore.
 
 First: git status (does not matter which branch you are on). 
 
+You can make a file or folder in your project. 
+Now in VS code: Ctrl + Shft + P and then type in ignore. Then you should see something like "add to git ignore."
+This created a file created a .gitignore file. 
+
+The file you have open will now have been added to the gitignore file. 
+
+You can also do this with folders. 
+In you gitignore file add:
+    /foldername
+
+files in these folders are also being ignored. 
+Never push up node_modules folders. People who will use your code are going to use the package.json files and use npm install themselves in roder to install the sufficient packages. 
+So they can generate their own node modules files. 
+
 ------------------------------------------------------------------------------------------------------------
 Fork
+
+A fork is like a branch. You fork from someone else's repo. 
+It makes a copy of it into your own repo. 
+You are no longer in like a horizontal display with branches over each other. 
+You are in your own repo. 
+If you want to push back into the owner's repo you need to submit a pull request and get their permission. 
