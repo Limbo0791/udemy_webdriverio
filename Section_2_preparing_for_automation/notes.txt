@@ -1,0 +1,27 @@
+Things you need to think about before you start doing any kind of automation. 
+------------------------------------------------------------------------------------------------------------
+Planning for automated testing
+
+What are your goals you want to solve with automated testing?
+    Reducing manual testing
+    Test automation to perform regression testing
+    Testing multiple browsers in parallel
+    Better responsive web design emulation testing
+    Faster releases
+    Continuous testing and feedback (CI/CD)
+
+What should not be the goals in an automaiton strategy?
+    Find 100% of the bugs. This is impossible. 
+    Automate 100% of all tests. 
+
+What are the daily things that someone who is writing automated tests is able to do?
+    Writing test scripts!
+    Understand the requirements
+------------------------------------------------------------------------------------------------------------
+Choosing the correct tool for test automation
+
+------------------------------------------------------------------------------------------------------------
+Developing for automated tests
+
+------------------------------------------------------------------------------------------------------------
+Strategy for automated testing

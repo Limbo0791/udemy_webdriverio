@@ -1,0 +1,18 @@
+Introduction
+-----------------------------------------------------------------------------------------------------------------------------------
+Course designed for entry level engineers. 
+
+WebDriverIo is a front end automation testing framework. 
+WebDriverIO is using a custom implementation of Selenium Webdriver.
+
+Basically you are using selenium. 
+Key features:
+    Easy to set up
+    Supports different report frameworks
+
+A few tips of making the most of this course:
+    Code with the videos. Do not just watch
+    Rewatch the videos
+    Do your own research. Google it! You need to get good at problem solving. Coding is just a tool. 
+    Ask if you really cannot move on anymore. 
+-----------------------------------------------------------------------------------------------------------------------------------
