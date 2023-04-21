@@ -29,12 +29,78 @@ Multiple roles in automated testing:
     developer
     Automation engineer: this is what i want to do! Software Development Engineer in Test (SDET)
 
-
 ------------------------------------------------------------------------------------------------------------
 Choosing the correct tool for test automation
 
+How to decide what tools to use?
+    What needs to be tested is key here. 
+    Code versus low code tools. Who is going to write the test scripts? Does the test engineer know how to code at all?
+
+Code based tools are typically open source. 
+No code tools usually are not free and open source. Probably very expensive. 
+
+Look for someone who knows how to code well. 
+With coding based tools, it can be very beneficial to write the tests in the same programming language as the product that is being developed. 
+
+If the product your team develops is in JavaScript, your tests could also very well be in JavaScript. 
+
+There are many web UI automation. Selenium, cypress, webdriverIO, robot framework, puppeteer, protractor. 
+It is not just selenium.
+Selenium is a library. You typically have to build out your own framework. It is not going to give you everything. 
+
+Some API automation tetsing tools:
+    JMeter
+    REST assured
+    SoapUI
+    Postman
+    ReadyAPI
 ------------------------------------------------------------------------------------------------------------
 Developing for automated tests
 
+How do we develop code to help with test automation?
+Like the actual application code. 
+
+UI:
+    it helps to have identifiers on HTML elements. We need to locate these elements. More specific elements make the test run faster and you have less searching. 
+    Accessible design. When the website is designed with some accessibility principles in mind (people who are blind and everything)
+        When sites are build like this, they are easier to automate. 
+    Alternate paths: having more than 1 way to get to somewhere. Look for shortcuts. 
+
+APIs:
+    test tokens. Tokens are often a pain. Often you need a token to prove you are allowed to make a certain request. These often expire so you cannot use the same one over and over again. 
+    Maybe a static test token?
 ------------------------------------------------------------------------------------------------------------
 Strategy for automated testing
+
+Key design aspects of writing automated tests:
+    Independent: 
+        tests should not be dependent on another test. 
+    Focus your test cases: 
+        tests should focus on a very specific outcome. Do not verify everything on the path you take for a specific goal.
+        Not focuing your test leads to redundancy. Why are we verifying the same thing over and over again. DRY.
+    Plan for scalability: 
+        tests should be written in a way they can be easily scaled and switched between environments.
+        Also the ability to run in parallel, makes your test run a lot faster!
+    isolate test data:
+        You do not want to share test data between tests that do CRUD operations on this data. 
+    Reusability:
+        Create functions for redundant steps. Make things reusable! Keep it DRY. 
+        Keep in mind the scope of your function. Can this function be shared or is it very specific?
+        Do not write assertions (verification points) into functions. 
+    Follow good coding conventions. 
+        They are not optional
+        DRY
+        Consistent indentation. 
+        Proper naming conventions
+        Code comments: write the test steps in comments before you write the code for them. 
+        Small file sizes or limit lines per file. Keep your files small and contained. 
+        Keep code simple. Do not be a show off. A simple solution is a good one. 
+    Code review:
+        Make sure somebody is reviewing your work. 
+            Tests should run and pass. 
+            Test expectations should match requirements
+            Good coding conventions
+    Source control:
+        Determine a soource control strategy and use it!
+        
+

@@ -1,0 +1,74 @@
+Git and Github
+------------------------------------------------------------------------------------------------------------
+Introduction
+
+No notes. Just make a github account. 
+Git is a version control system
+------------------------------------------------------------------------------------------------------------
+Setup git on your machine
+
+Install git for windows.
+No notes here. 
+------------------------------------------------------------------------------------------------------------
+Add, commit, push
+
+Make a repo in github. 
+Clone it to your pc with HTTPS. 
+Open the folder in VS Code. 
+Make a file, and do git add ., git commit -m "message here", git push. 
+
+Shortcut: "git status" to check the files
+There is a hidden .git folder that is used by Git to keep all the log files. 
+------------------------------------------------------------------------------------------------------------
+Branch and merge
+
+Atlassian has a good Git Branch tutorial:
+https://www.atlassian.com/git/tutorials/using-branches
+
+Branching is basically splitting timelines. 
+You have the master (main) branch. This is the main timeline with the main project. 
+You can branch off to make a little feature branch. When you are finished with the feature you can merge it again with the master. 
+Everything on your diverging branch putting back to master is merging the branches. 
+
+There is a thing called merge conflicts. 
+Then git does not know how to resolve the differences. Whos changes should be applied? 
+
+In github you can create a new branch. 
+Go to the new branch and update the readme. Add some text and commit it. We are still in the test branch, master does not have these changes. 
+2 different branches, 2 different changes. 
+
+------------------------------------------------------------------------------------------------------------
+Fetch, checkout, pull
+
+How to get from master branch to test branch. 
+
+With "git branch" lists the local branches: whatever branches you have pulled onto your local device.
+git fetch: this is going to get a list of things we do not know about. 
+git branch -a: we can now see our test branch.
+git fetch lists everything that is there but it does not actually pull the code. 
+
+If you actually want to pull the code: git pull
+We will do that in a second but first we want to change branches. 
+so we do "git checkout test_branch"
+
+It will give a message: switched to different branch
+Now we are in the other branch:
+change back: git checkout master. Now you are in the master again. 
+
+Git pull: it will pull in all the changes. 
+
+Fetching: grabbing information about the changes
+checkout: switch between branches.
+pull: pull all code from a change. If you are in a branch that hasn't yet got the changes, git pull is going to pull all those changes in. 
+
+------------------------------------------------------------------------------------------------------------
+Using gitignore
+
+You do not want to include certain files and folders in your git push. 
+Like files you only want local like your node modules or security files. 
+We can ignore these with git ignore. 
+
+First: git status (does not matter which branch you are on). 
+
+------------------------------------------------------------------------------------------------------------
+Fork
