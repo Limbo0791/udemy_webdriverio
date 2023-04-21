@@ -17,6 +17,19 @@ What should not be the goals in an automaiton strategy?
 What are the daily things that someone who is writing automated tests is able to do?
     Writing test scripts!
     Understand the requirements
+    Validate the test scripts work and update as needed (applications change and test scripts need to chnange with them).
+    Review the test results.
+    Maintain the test scripts and framework
+
+What are you going to automate?
+Review: the testing pyramid!
+
+Multiple roles in automated testing:
+    test engineer
+    developer
+    Automation engineer: this is what i want to do! Software Development Engineer in Test (SDET)
+
+
 ------------------------------------------------------------------------------------------------------------
 Choosing the correct tool for test automation
 
