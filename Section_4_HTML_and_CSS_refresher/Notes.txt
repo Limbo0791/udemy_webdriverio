@@ -1,0 +1,36 @@
+Introduction
+
+We will use VS Code for the rest of the course. 
+
+Some extensions to use:
+    open in browser
+    path intellisense
+
+------------------------------------------------------------------------------------------------------------
+HTML refresher
+
+Creating a simple html page. See the other file. 
+
+index.html is the basic starting point of web pages. 
+In your html file, type 'html' and you see you can choose html:5, select it and you will get some standard boilerplate html. 
+
+The body is your main content. 
+html uses open and closing tags with the forward slash /.
+<head></head>
+
+The 2 tags, and everything within the 2 tags is called an element. 
+
+Right click and select 'open in default browser'.
+We can also use Live Server to open web pages. Every save updates the document. 
+
+You can type the first letter of an element (like the p for paragraph) and hit the tab key and it will automatically create the proper tags. 
+
+Ctrl + / will turn it into a comment. 
+
+Sometimes you do not need a closing tag. For example for input or an image. 
+
+You can have a form, with in it an input of type 'submit', which closely resembles a button.
+Buttons can do anything.
+Submit is tied to the form and the info within it. 
+------------------------------------------------------------------------------------------------------------
+CSS refresher
