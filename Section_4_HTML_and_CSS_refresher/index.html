@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML page title</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <h1>This is an H1 heading</h1>
-    <h2>This is an H2 heading</h2>
-    <h3>This is an H3 heading and this continues up to H6</h3>
+  <body id="body">
+    <h1 class="heading">This is an H1 heading</h1>
+    <h2 class="heading">This is an H2 heading</h2>
+    <h3 class="heading">This is an H3 heading and this continues up to H6</h3>
     <p>This is a paragraph</p>
 
     <!-- unordered list -->
@@ -41,12 +42,49 @@
     <!-- horizontal line: -->
     <hr />
 
+    <!-- A form  -->
     <form action="">
-      Height: <input type="text" name="" id="" /> 
-      Width: <input type="text" name="" id="" />
+      Height: <input type="text" name="" id="" /> Width:
+      <input type="text" name="" id="" />
       <br />
       <br />
-      <input type="submit" /><br />
+      <input type="submit" value="submit" /><br />
     </form>
+    <br />
+    <br />
+    <!-- Checkboxes  -->
+    <input type="checkbox" value="green" name="" id="" /> Green
+    <input type="checkbox" value="blue" name="" id="" /> Blue
+    <input type="checkbox" value="orange" name="" id="" /> orange
+
+    <br />
+    <br />
+    <!-- A radio button. One radio selected at a time. -->
+    <form action="">
+      <input type="radio" value="1" name="number" id="" /> 1
+      <input type="radio" value="2" name="number" id="" /> 2
+      <input type="radio" value="3" name="number" id="" /> 3
+    </form>
+
+    <hr />
+    <!-- A simple dropdown -->
+    <select name="" id="">
+      <option value="First">First</option>
+      <option value="Second">Second</option>
+      <option value="Thirdt">Third</option>
+    </select>
+
+    <hr />
+
+    <!-- A simple link  -->
+    <a href="www.google.com"> Google.com</a>
+
+    <hr />
+    <!-- A simple image -->
+    <img
+      src="https://418-creatingstories.imgix.net/2019/12/van-bs-as-naar-iguazu.jpg?auto=formaat&dpr=2&h=740&w=1440&lossless=1"
+      alt="Iguazu falls"
+      width="70%"
+    />
   </body>
 </html>

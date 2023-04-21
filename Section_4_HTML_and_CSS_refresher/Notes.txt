@@ -32,5 +32,21 @@ Sometimes you do not need a closing tag. For example for input or an image.
 You can have a form, with in it an input of type 'submit', which closely resembles a button.
 Buttons can do anything.
 Submit is tied to the form and the info within it. 
+
+<br> means break: goes to the next line.
+
+Attributes are different things we can give to a tag to give it extra information. 
+For an link for example the href, or for an image the src is the source of the actual image. 
 ------------------------------------------------------------------------------------------------------------
 CSS refresher
+
+Create a style.css file and an index.html file. 
+We are writing CSS in a separate file and we will link it in the HTML file. 
+For that we need a link tag in the head section of the html file like this:
+    <link rel="stylesheet" href="style.css">
+
+In CSS you work with classes and ID's as HTML attributes when styling. 
+A class is represented by a dot. 
+An ID is represented by a hash: #
+Multiple elements can have the same class.
+ID's should be unique. 
