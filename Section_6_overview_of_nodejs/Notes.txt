@@ -1,0 +1,94 @@
+Overview of Node.js
+-----------------------------------------------------------------------------
+Introduction to Node.js
+
+Allows you to run JS outside of the browser. 
+Includes Node Package Manager (NPM). 
+
+A very powerful platform that enables you to do all kinds of things. 
+Test automation, building APIs, Angular or React based development. 
+We will use only a few things. 
+
+-----------------------------------------------------------------------------
+Node.JS version of this course
+
+Recommended: node 13 or higher. 
+We have 19.9.0
+
+Check version by node -v or npm -v in the cmd. 
+
+-----------------------------------------------------------------------------
+Installing Node.js
+
+Installed for Windows. 
+-----------------------------------------------------------------------------
+Executing JavaScript
+
+Executing JS inside Node.JS.
+In the commandprompt, type in node and hit enter. 
+Then the prompt changes its cursor to >.
+Now you can type JS code right in the terminal!
+Ctrl + C or .exit to exit node again. 
+
+Another way: create a js file. 
+Create a simple file, save it. Open in terminal. 
+Then type node filename.js. 
+Benefit: we can write multiple lines of code in a file instead of one in the cmd.
+
+-----------------------------------------------------------------------------
+Installing packages
+
+How to install packages using NPM. 
+Inside the folder you want your packages: type npm init 
+Keep on hitting enter until you see yes and then hit enter again.
+
+We will have generated a brand new file: package.json. 
+This is the file npm uses to figure out what packages one needs. 
+When someone else goes to work on your project they can type in npm install and node will install anything in this package.json. 
+
+npmjs.com is used to search for packages. 
+TO install a package:
+    npm install packagename
+    or
+    npm i packagename
+
+For install, you can also use the suffix -save-dev. 
+This creates a devDependency in your package.json file. 
+devDependencies are for development work, not for production work. 
+
+Another thing that got created: a node_modules folder. There you find the actual package that was installed. 
+
+Now we can do a few things with a package, like check the version. 
+However; 'lorem-ipsum --version' is not going to work. 
+This is because we did not install it globally. 
+We installed it locally so we need to tell it exactly what file to use. 
+so like this:
+./node_modules/.bin/lorem-ipsum --version
+
+or we could do:
+
+./node_modules/.bin/lorem-ipsum 1 sentence
+
+The package is working!
+
+What if we wanted to install it globally?
+First we uninstall it: 
+npm uninstall lorem-ipsum
+
+Now to install it globally:
+npm i -g lorem-ipsum -save-dev
+
+To uninstall it:
+npm uninstall -g lorem-ipsum -save-dev
+
+Now commands will work from anywhere. 
+When we do install it gloablly it does not show up in our devDependencies. 
+
+You can delete the node_modules folder. If you do "npm install" node will install everything found in the package.json file. 
+It will be installed automatically in a node_modules folder and this folder will appear again. 
+
+When you hand over your project you do not want to give the other person the node_modules folder. 
+The package.json file should be more than enough. 
+That way you can also ensure that the other persion gets the latest version of the necessary dependencies. 
+
+
