@@ -49,4 +49,12 @@ In CSS you work with classes and ID's as HTML attributes when styling.
 A class is represented by a dot. 
 An ID is represented by a hash: #
 Multiple elements can have the same class.
-ID's should be unique. 
+ID's should be unique. Only one thing should have that ID. 
+
+Divs: these are just containers that you can style separately.
+div h1 {} means looking for the h1 inside the div. h1 tags declared outside the div may have different styling. 
+
+CSS uses classes and ID's and generally known as CSS selectors to style elements on the page.
+We are going to use them to find elements on the page when we are doing automation. 
+
+

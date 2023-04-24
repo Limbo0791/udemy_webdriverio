@@ -1,0 +1,84 @@
+JavaScript Refresher.
+------------------------------------------------------------------------------------------------------------
+Introduction
+No notes.
+------------------------------------------------------------------------------------------------------------
+JavaScript Refresher
+
+Inside an index.html file body, put a script tag. 
+We can directly write JS in here or we can write JS in a separate file and link it to the HTML file. 
+To link a JS file: <script src="yourJSfile.js">
+
+In a js file, comments go by //
+
+Do not forget semi colons.
+
+console.log() prints to the console. 
+
+For variables: use const or let for variables. Do not use var. 
+const name = 'Wilco';
+
+For template literal, use backticks `` tigether with ${} to insert variables into a string. 
+
+Remember: arrays have A LOT of methods in JS. 
+Arrays are zero indexed. 
+Array.length is NOT zero indexed. length starts at 1. 
+
+Remember: there is a difference between =, == and ===
+= means assignment
+== check for equality in value
+=== check for equality in value and datatype. 
+
+ALWAYS use strict mode and check for strict equality. 
+Always use the triple equal sign. 
+
+------------------------------------------------------------------------------------------------------------
+Objects and JSON data
+
+Example code and notes also in "objects_and_json_data.js"
+
+In an object we can add a method. 
+A method is a function that is inside of an object. 
+
+Inside of the object, the this keyword refers to the owner of the properties.
+So in our case the object itself. 
+The this keyword can get pretty complicated. Google it if necessary.
+
+We created another file: data.JSON
+JSON = JavaScript Object Notation. It is used for getting data. 
+It looks like very much an object, but there are a few differences. 
+
+In a JSON file, the key is within quotes. Just like the value if its a string.
+In a regular object, properties do not need quotes for the keys. 
+Comments are not permitted in JSON files. 
+You can also not use methods. You cannot add a method to a JSON file.
+
+They are just for providing data. 
+------------------------------------------------------------------------------------------------------------
+Classes
+
+Classes are like a blueprint. 
+You set up a blueprint and can make copies of it that already have certain properties.
+
+Class names should start with a capital letter.
+The first thing a class needs is a constructor. 
+Constructors execute as soon as a new copy of the class is initialized.
+In this constructor you can already set some properties that every instance of the class is going to have. 
+In our example: fname and lname. 
+
+
+Class inheritance. 
+Inherit methods and properties from another class. 
+Uses the extend and super keywords. 
+Order of operations is important here. 
+First the things you are going to inherit, then the new unique properties of the child class. 
+
+you can also add new methods to the child class. However these are not accessible for the Parent class!
+
+------------------------------------------------------------------------------------------------------------
+Callback functions
+
+A callback function is a function that takes another function as an argument. 
+You can also write them as an arrow function. 
+Tip: use a named function stored in a variable and keep things simple. 
+
