@@ -33,6 +33,47 @@ So we have verified Mocha is up and running.
 -----------------------------------------------------------------------------
 Writing a test in Mocha
 
+Create a new folder inside the current one, call it test. 
+In it, create a test.js file, check code in the file itself.
+
+We are going to use the builty-in node.js assertions.
+Assertions are verifications. It is the exact thing you want to verify. 
+
+After that we will write down a describe block, which is a callback function.
+The describe is a test suite. You are going to have one describe that explains what your test is about.
+Within the describe block we need an it. it() is going to be the actual test.
+it() needs a name as well and convention is to write it wwith the word 'should'. 
+The second argument it() takes is also acallback function. 
+Inside the body of this is going to be our actual test. 
+Our code now:
+
+const assert = require("assert");
+
+describe("Math suite", function () {
+  //reusable functions
+  function add(a, b) {
+    return a + b;
+  }
+
+  //tests
+  it("should add 2 numbers correctly", function () {
+    const result = 2;
+
+    assert.equal(add(1, 1), result);
+  });
+});
+
+So in the it() block we define our expected result in a variable, and we do an assert statement. The actual tests. assert.equal() checks if 2 values are equal and takes 2 arguments. The first one is your actual acquired result. 
+The second one is your expected result. 
+
+To run the test: npm test (while in the folder where you have installed mocha.)
+It searches for anything that is a Mocha test.
+It will search for our test suite (math suite) and run our test. 
+Notice it prints out the name of our it() test: should add 2 numbers correctly. 
+
+Test casers are grouped within their test suite (the describe block).
+You can add a third argument to the assert.equal statement: a message bthat gets printed when the test fails. 
+
 -----------------------------------------------------------------------------
 Before and after
 
