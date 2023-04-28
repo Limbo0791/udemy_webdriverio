@@ -1,0 +1,111 @@
+Chrome Developer Tools.
+-----------------------------------------------------------------------------
+Introduction to Chrome Developer Tools
+
+Chrome browser to find elements, look at html in order for us to test. 
+It is the most used browser by developers. 
+
+-----------------------------------------------------------------------------
+Developer Tools
+
+In chrome, rightclick anywhere on the page and click inspect. 
+You can choose where to dock the developer tools, or even have them in a new window. 
+Personally i like to have them docked to the right. 
+
+Some of the tabs:
+    Elements: Shows the DOM of the elements of the page that is being displayed right now
+    Console is for any logs, or you can enter JS and execute it. 
+    Sources: show you the files used to render the page. index.html, js and css. 
+    Network: used to evaluate traffic that is going through the browser. 
+    Performance: performance of your site
+    Application: you can see things like storage here. You can also see all the cookies. 
+
+There is also (on the left) the Toggle Size toolbar, which allows you to change the size of the window.
+Come sin handy when emulating for example a mobile phone. 
+
+-----------------------------------------------------------------------------
+Viewing and Altering the DOM
+
+The DOM is the view in HTML what is on the page. 
+Go here:
+https://the-internet.herokuapp.com/
+
+You see that you can hover over certain lines and the page will highlight these things. 
+What is highlighted is the page that is represented by the written code. 
+
+You can double click on the content of some of these elements and change them!
+This is useful if you want to play around with HTML without wanting to upload it to the server again. 
+
+You can even 'turn off' the different styles.
+
+It is useful for making quick mock ups. 
+
+You can also right click on a specific element and inspect that. Notice that the develoepr tools will automatically open up that section and show you that specific elements. 
+-----------------------------------------------------------------------------
+Executing code in the console
+
+Move to the console tab. You can write JS code directly here. 
+You can execute JS code perfectly fine here. Even store variables. 
+
+While in the console you can actually access the documents. 
+And by that i mean the document for the DOM.
+Try this: document.URL and you get the URL of the current document. 
+There are tons of methods you can access with the document. 
+
+-----------------------------------------------------------------------------
+Finding elements using the DOM 
+
+How to find elements using the DOM. 
+Test object: the-internet.herokuapp.com
+
+We are going to look for the word 'file' on the page.
+We will look for it in the DOM. 
+In the dev tools: Ctrl + F. 
+There you can search by string, selector or xpath. 
+Type in 'file' and the finds will be highlighted. You can cycle through it using enter. 
+
+THis is useful for hidden elements. 
+These elements are in the DOM but might be invisible for whatever reason. 
+
+Next: search by selector. 
+You can search for div, body or whatever HTML elements/CSS Selectors you want. 
+Like a css selector: div > a. 
+It is important to understand CSS Selectors for finding elements. 
+Look for unique selectors. 
+div > ul > li this gives 43 results. 
+You can tell dev tools which one you want like this: div > ul > li:nth-child(10)
+This is NOT zero based. It starts at 1. 
+
+Is there an automatic way to do this?
+Kind of.
+Richt click on the element, copy --> copy selector. Paste that into the search bar. 
+Divs are all over the place. 
+ID's should be unique. 
+
+-----------------------------------------------------------------------------
+Finding elements using JavaScript
+
+Instead of using the DOM, we can also use JS!
+We can right click on an element, inspect, copy JS path and paste it in the Console.
+This should look like this:
+    document.querySelector("#content > ul > li:nth-child(11) > a")
+
+document is the object we are referring to. 
+querySelector is the method we use for finding the CSS selector and its corresponding element. 
+
+Remember when we searche dfor child we could specify which item we got?
+If you leave child out of it, you would get 43 items. 
+Not in JS. In JS you only get the first item that matches. 
+Why?
+Beacause document.querySelector is looking for a specific item, not a collection of items. 
+
+There is a workaround for that: document.querySelectorAll()
+This will return a list (an array) of all the items that match the description. 
+So choosing a specific element from this list can be done like this: document.querySelectorAll()[0]
+This will return the first element. 
+Remember: arrays are zero based. List items searched for in the DOM are not zero based. 
+
+
+
+
+

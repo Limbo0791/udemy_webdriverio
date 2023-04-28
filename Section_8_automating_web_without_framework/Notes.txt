@@ -1,0 +1,110 @@
+Automating the web without a framework
+-----------------------------------------------------------------------------
+Introduction
+
+Starting again with: https://the-internet.herokuapp.com/
+Just plain JS and the Dev tools. 
+Writing some basic JS scripts to interact with the elements on the web page. 
+
+-----------------------------------------------------------------------------
+Adding user actions
+
+You can interact with the elements using JS on the console.
+Copy the JS path of A/B testing into the console. 
+Like this: 
+
+    document.querySelector("#content > ul > li:nth-child(1) > a")
+
+What if we wanted to do something with that?
+You can put a dot at the end and you will see many more methods available that can interact with that element. 
+Like clicking it:
+
+    document.querySelector("#content > ul > li:nth-child(1) > a").click()
+
+This will open the page.
+You can do this with every clickable element. 
+
+What if we wanted to get the text of something?
+We can use the innerHTML method for that!
+Like this: 
+
+    document.querySelector("#content > ul > li:nth-child(1) > a").innerHTML
+
+Parentheses are not necessary. 
+InnerHTML is going to work if there is text inside the element you have selected. 
+
+For inputs it works a bit different. Inputs do not have innerHTML, they have value. 
+Like this:
+
+    document.querySelector("#content > div > div > div > input[type=number]").value
+
+Again no parentheses. It will give an empty string if the input field is empty. 
+Inputs always give back a string. 
+
+-----------------------------------------------------------------------------
+Creating reusable element variables
+
+How to make it easier to use the long queryselectors. 
+Improved readability and usability. 
+
+File in use: test.js 
+We will use it to write code in it and paste that into the console. 
+
+We can put the whole docuement.queryselector('JS path here') inside a variable. 
+Like this:
+
+    const inputfield = document.querySelector("#content > div > div > div > input[type=number]")
+;
+Now we have a vriable we can use. Much easier. 
+Now also, if something changes we only have too update on one place. 
+
+That was simple for a single element. 
+What if we wanted to do it for when we use the queryselectorAll?
+
+    const fields = document.querySelectorAll("#content > ul > li");
+
+This gives us everything in the form of a nodelist. 
+To access one element, access the index:
+
+    fields[0].innerHTML;
+
+gives us:
+
+    <a href="/abtest">A/B Testing</a>'
+
+-----------------------------------------------------------------------------
+Adding logic to actions
+
+Remember the queryselectors? We can add logic to them!
+Check if they are the way we want them to be before we start doing something with it. 
+
+Lets write out a simple test for the input field. 
+lets do an if statement. 
+First our input field:
+
+const inputfield = document.querySelector(
+  "#content > div > div > div > input[type=number]"
+); // making a variable out of selecting an element
+
+The statement:
+
+//adding logic to an action
+if (inputfield.value === "1") {
+  console.log("The value is 1");
+} else if (inputfield.value === "") {
+  console.log("There is nothing in the inputfield");
+} else {
+  console.log(`The value is ${inputfield.value}`);
+}
+
+We can paste this logic in the console and it works fine. 
+You can apply logic to check if things are true or false. 
+
+
+-----------------------------------------------------------------------------
+Looping through actions
+
+You can loop through elements. 
+
+-----------------------------------------------------------------------------
+Creating reusable action functions
