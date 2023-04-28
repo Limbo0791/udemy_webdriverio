@@ -1,0 +1,47 @@
+Mocha & Chai testing framework
+-----------------------------------------------------------------------------
+Introduction to Mocha
+
+Mocha is a JS test framework that runs with Node.JS.
+It is used to write simple test cases for JavaScript.
+
+-----------------------------------------------------------------------------
+Installing Mocha
+
+You can install it globally or straight into the directory where you want to test. 
+Wee are going for the second option. 
+
+We installed Mocha under the Section_9_mocha_and_chai_unit_test_framework folder. 
+The command: 
+    npm init
+    npm install Mocha
+
+-----------------------------------------------------------------------------
+Writing a test in Mocha
+
+-----------------------------------------------------------------------------
+Before and after
+
+-----------------------------------------------------------------------------
+Including and excluding tests
+
+-----------------------------------------------------------------------------
+Reporters
+
+-----------------------------------------------------------------------------
+Introduction to Chai
+
+-----------------------------------------------------------------------------
+Installing chai
+
+-----------------------------------------------------------------------------
+Assertion options
+
+-----------------------------------------------------------------------------
+Expect assertions
+
+-----------------------------------------------------------------------------
+Should assertions
+
+-----------------------------------------------------------------------------
+Assert assertions
