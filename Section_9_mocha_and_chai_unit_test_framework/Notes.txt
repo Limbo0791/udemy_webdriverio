@@ -14,8 +14,22 @@ Wee are going for the second option.
 We installed Mocha under the Section_9_mocha_and_chai_unit_test_framework folder. 
 The command: 
     npm init
-    npm install Mocha
+    npm install mocha
 
+Now, in the folder where you installed mocha, give the following command:
+    npm test
+You will get an error saying: "Error: no test specified"
+The cause of this error can be found in your package.json file, where you can fiund this:
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+Change it to this:
+  "scripts": {
+    "test": "mocha"
+  },
+
+Do npm test again. You will stioll get an error, but you see that Mocha ran and it is basically saying that there were no test files. 
+So we have verified Mocha is up and running. 
 -----------------------------------------------------------------------------
 Writing a test in Mocha
 
