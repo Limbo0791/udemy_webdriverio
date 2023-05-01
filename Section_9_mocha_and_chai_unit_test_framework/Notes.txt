@@ -124,22 +124,89 @@ This will give you a dot reporter: dots for the passed tests, commas for the pen
 You also have nyan or landing like:
             npm test -- --reporter landing
 
-Usually we stock with the normal one. 
+Usually we stick with the normal one. 
 
 -----------------------------------------------------------------------------
 Introduction to Chai
 
+Often times with Mocha you are going to see the word Chai. 
+Chai is an assertion library. 
+Assertions are ways to verify that the expected outcome is what actually happened.
+
+Chai gives you more flexibility on how you can write your assertions. 
+Here we will learn how to use chai with different types of assertions within the Mocha framework. 
+
+
 -----------------------------------------------------------------------------
 Installing chai
+
+To install Mocha and chai together, go to a new folder and do:
+    npm init
+    npm install mocha 
+    npm install chai
+    In package.json: change test to Mocha
 
 -----------------------------------------------------------------------------
 Assertion options
 
+With Chai you get 3 different ways to do assertions (split up into 2 different styles):
+Styles:
+    BDD - Behaviour Driven Development
+    TDD - Test Driven Development
+
+The three different ways:
+    Should: BDD
+    Expect: BDD
+    Assert: TDD. 
+
+The way you write assertions is a little bit different for each one. 
+Make sure which type of assertions you are doing. 
+
 -----------------------------------------------------------------------------
 Expect assertions
 
+When using chai, make sure you have a chai variable at the top of your file like this:
+const chai = require("chai")
+const expect = chai.expect
+This makes expect available. 
+
+How an expect statement looks:
+  it("should pass expect", function () {
+    expect(fname).to.be.equal("Wilco");
+  });
+
+First you fill in your actual and then your expected result. 
+"i expect test subject x to be equal to reference value y"
+You can put in an additional argument which will be displayed if the test fails:
+  it("should pass expect", function () {
+    expect(fname).to.be.equal("Wilco", 'Values are not equal');
+  });
+
+Another test:
+  it.only("Should pass expect with boolean", function () {
+    expect(bool).to.be.true;
+  });
+Here we were testing a Booleann value. 
+
+Another test with a predefined array:
+  const arr = [1, 2, 3, 4, ""];
+
+    it.only("should pass expect with arr", function () {
+    for (let i = 0; i < arr.length; i++) {
+      expect(arr[i]).to.be.equal(3); // we want everything to be 3 but only one thing is going to be 3.
+    }
+  });
+
+Above test will fail. And whenever the loop encounters the failure, the test will stop. 
+We are looping through an array with multiple elements, however it is still only one test. 
+one it block equals one test, and it does not matter how many assertions you put in there. 
+
+As soon as one assertion fails, it will stop testing. It does not care about any other assertions. 
+
+
 -----------------------------------------------------------------------------
 Should assertions
+
 
 -----------------------------------------------------------------------------
 Assert assertions

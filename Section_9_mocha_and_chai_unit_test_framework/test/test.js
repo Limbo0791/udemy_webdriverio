@@ -1,6 +1,16 @@
 const assert = require("assert");
 
+//Making chai available
+const chai = require("chai");
+const expect = chai.expect;
+
 describe("Math suite", function () {
+  // some tetsing variables
+  const fname = "Wilco";
+  const bool = true;
+  const arr = [1, 2, 3, 4, ""];
+  //============================================================
+
   //reusable functions
   function add(a, b) {
     return a + b;
@@ -17,8 +27,10 @@ describe("Math suite", function () {
   function divide(a, b) {
     return a / b;
   }
+  //============================================================
 
-  //hooks: before. To run before all tests.
+  //hooks:
+  //before. To run before all tests.
   before(function () {
     console.log("Before");
   });
@@ -38,7 +50,32 @@ describe("Math suite", function () {
     console.log("After Each");
   });
 
-  //tests
+  //============================================================
+
+  //test using Chai Expect
+  it.only("should pass expect", function () {
+    expect(fname).to.be.equal("Wilco");
+  });
+
+  it.only("Should pass expect with boolean", function () {
+    expect(bool).to.be.true;
+  });
+
+  it.only("should pass expect with arr", function () {
+    for (let i = 0; i < arr.length; i++) {
+      expect(arr[i]).to.be.equal(3); // we want everything to be 3 but only one thing is going to be 3.
+    }
+  });
+
+  //============================================================
+  // Tests using Chai Should 
+
+  
+
+  //============================================================
+
+
+  //tests using pure Mocha
   it("should add 2 numbers correctly", function () {
     const result = 2;
 
@@ -63,5 +100,5 @@ describe("Math suite", function () {
     assert.equal(divide(1, 1), result, "The results are not equal."); //assert.equal can take 3 arguments
   });
 
-  it("Pending test");
+  it("Pending test"); // a pending empty test
 });
