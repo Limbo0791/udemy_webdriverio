@@ -178,6 +178,7 @@ How an expect statement looks:
 First you fill in your actual and then your expected result. 
 "i expect test subject x to be equal to reference value y"
 You can put in an additional argument which will be displayed if the test fails:
+  
   it("should pass expect", function () {
     expect(fname).to.be.equal("Wilco", 'Values are not equal');
   });
@@ -207,6 +208,34 @@ As soon as one assertion fails, it will stop testing. It does not care about any
 -----------------------------------------------------------------------------
 Should assertions
 
+Making should available:
+const should = chai.should();
+
+Use parnetheses here.
+
+We will cover all styles, but choose one and stickt with it.
+No need to make things complicated with different styles. 
+
+The should syntax:
+  it.only("Should pass should", function () {
+    fname.should.equal("Wilco", "If test fails error message here");
+  });
+
+fname is the thing we are testing. "Wilco" in the equal parentheses is our reference. 
+
+We like the expect version.
 
 -----------------------------------------------------------------------------
 Assert assertions
+
+Making it available:
+const chaiAssert = chai.assert;
+No parentheses. 
+
+It works basically the same as the mocha assert:
+
+  it.only("Should pass Chai assert with fname", function () {
+    chaiAssert.equal(fname, "Wilco", "Error message if test fails");
+  });
+
+Of the 3 we will use Expect the most. 

@@ -1,8 +1,15 @@
+// making assert available in Mocha
 const assert = require("assert");
 
-//Making chai available
+//Making chai and expect available
 const chai = require("chai");
 const expect = chai.expect;
+
+// making chai should available
+const should = chai.should();
+
+// making chai Assert available
+const chaiAssert = chai.assert;
 
 describe("Math suite", function () {
   // some tetsing variables
@@ -45,7 +52,7 @@ describe("Math suite", function () {
     console.log("After");
   });
 
-  //afterEach: runs afteer each test
+  //afterEach: runs after each test
   afterEach(function () {
     console.log("After Each");
   });
@@ -53,27 +60,39 @@ describe("Math suite", function () {
   //============================================================
 
   //test using Chai Expect
-  it.only("should pass expect", function () {
+  it("should pass expect", function () {
     expect(fname).to.be.equal("Wilco");
   });
 
-  it.only("Should pass expect with boolean", function () {
+  it("Should pass expect with boolean", function () {
     expect(bool).to.be.true;
   });
 
-  it.only("should pass expect with arr", function () {
+  it("should pass expect with arr", function () {
     for (let i = 0; i < arr.length; i++) {
       expect(arr[i]).to.be.equal(3); // we want everything to be 3 but only one thing is going to be 3.
     }
   });
 
   //============================================================
-  // Tests using Chai Should 
+  // Tests using Chai Should
 
-  
+  it("Should pass should with fname", function () {
+    fname.should.equal("Wilco", "If test fails error message here");
+  });
+
+  it("Should pass should with boolean", function () {
+    bool.should.equal(true);
+  });
 
   //============================================================
+  // Tests using Chai Assert
 
+  it.only("Should pass Chai assert with fname", function () {
+    chaiAssert.equal(fname, "Wilco", "Error message if test fails");
+  });
+
+  //============================================================
 
   //tests using pure Mocha
   it("should add 2 numbers correctly", function () {
