@@ -77,11 +77,54 @@ You can add a third argument to the assert.equal statement: a message bthat gets
 -----------------------------------------------------------------------------
 Before and after
 
+In Mocha you have something called hooks. 
+Hooks can be run before all tests, after all tests. or before/after each test. 
+
+So you need the before() keywrod with in it a callback function. 
+In this callback function, a block that will run before all tests. 
+
+A before will execute once before all tests. 
+A beforeEach wwill execute before each test. 
+An after will execute once after all tests. 
+An afterEach will execute after each test.
+
+These can come in handy when you have different tests that need for example the same starting conditions. 
+Like every test should start while being logged in on a page. 
+An appropriate after could again be to log out.
 -----------------------------------------------------------------------------
 Including and excluding tests
 
+Lets say you have a describe(), so a test suite, with a lot of tests but you only want to run one of them?
+Instead of it() you can do it.only() and save. 
+This will only run the test that has this notation. 
+You can do this on multiple tests or on the suite itself: describe.only. 
+This can come in handy if you have multiple test files. 
+
+Now, what if you wanted to do all the tests except one?
+For that you can use:   it.skip()
+Skipped tests are marked as pending. It has not been run. 
+
+Another trick, you can also do this:
+                        it('pending test')
+Notice the absence of the callback function. 
+This is usefull for when we want to do a mock up of something we are testing and do not yet know what exactly. 
+This empty test will show up as one that is pending. 
+
 -----------------------------------------------------------------------------
 Reporters
+
+So far we have used the default reporter which is called SpecReporter. 
+The format you see in the terminal is what is called the SpecReporter.
+
+There are other built-in reporters. 
+For example:
+            npm test -- --reporter dot
+This will give you a dot reporter: dots for the passed tests, commas for the pending ones. 
+
+You also have nyan or landing like:
+            npm test -- --reporter landing
+
+Usually we stock with the normal one. 
 
 -----------------------------------------------------------------------------
 Introduction to Chai
