@@ -88,7 +88,7 @@ describe("Math suite", function () {
   //============================================================
   // Tests using Chai Assert
 
-  it.only("Should pass Chai assert with fname", function () {
+  it("Should pass Chai assert with fname", function () {
     chaiAssert.equal(fname, "Wilco", "Error message if test fails");
   });
 
