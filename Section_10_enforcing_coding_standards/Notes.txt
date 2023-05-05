@@ -1,0 +1,91 @@
+Enforcing Coding standards
+-----------------------------------------------------------------------------
+Introduction to enforcing coding standards
+
+We are going to use linting: software that runs on your computer and checks your code 
+to make sure you are using the correct coding standards, indentation, spaces and such. 
+
+We will use ESLint. It has a VS code plugin. 
+In order to use ESLint you need node.js. 
+We have node version 19.9.0.
+
+We installed ESlint from the extensions tab. 
+Configuring this will be for the next lecture. 
+
+-----------------------------------------------------------------------------
+Installing ESLint
+
+In the ESlint extension as well as on eslint.org you can find installation instructions. 
+
+Go to the directory of a specific folder you want to configure.
+
+You can install ESLint either locally or globally. 
+Local means the folder where you install it. It is only active there. 
+This is for project work. It will not work in another folder. 
+
+You can also install it globally and run the ESLint command anywhere you want. 
+The command will be accessible everywhere. 
+
+The command to install eslint globally:
+    npm install -g eslint 
+YOur packages will be downloaded and installed. 
+If you type 'eslint' in your terminal now it should return something. For me it does not. 
+
+We chose to follow the official ESLint quickstart guide:
+https://eslint.org/docs/latest/use/getting-started
+
+We do follow the course and do a global install using:
+    npm install eslint --global
+
+We did see installation activity. 
+Npw, in our folder:
+    npm init to make a package.json file
+
+Now we create an ESLint file using:
+    eslint --init
+
+We can combine npm init and eslint --init in one command: npm init @eslint/config. 
+
+It will ask us some questions: 
+1. We will check syntax, find problems and enforce code style 
+2. Javascript
+3. None of these
+4. No typescript
+5. Browser
+6. Popular style guide
+7. airbnb
+8. json
+9. we want to install extra dependencies using npm 
+
+We see a bunch of stuff, the most important being the eslintrc.json file. 
+Now when you open a JS file in the directory where you also installed ESLint, you will see all sorts of errors. 
+THis is ESlint doing its work. 
+These are airbnb standards appplying to their code. 
+
+You can also list errors from the command line. The command:
+    eslint filename.js
+the js file should be in the same directory as where you installed eslint of course. 
+It will pinpoint all the errors. However, through the VSCode GUI it is a lot easier. 
+
+We will configure ESLint how we want it in the coming lessons. 
+
+-----------------------------------------------------------------------------
+ESLint in practice
+
+In the course they use a debug.js file as a starting point for configuring eslint. 
+We will use the same file. 
+
+It is a lot of gibberish code full of errors, but it wil;l help us configure ESLint. 
+This is how Airbnb develops their code. 
+So these errors basically says: this is not according tpo the airbnb standard. 
+We will fix these errors and update our rules in the next lecture. 
+
+Just hover over errors and see what it says. 
+For example we see functions in use before they are defined. 
+Or alerts! eslint does not want alerts for some reason. 
+
+Another one: Expected linebreaks to be LF but found CRLF. 
+This is for Unix type systems, not something we can do now. 
+
+-----------------------------------------------------------------------------
+Updating our rules
