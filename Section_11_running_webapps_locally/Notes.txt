@@ -1,0 +1,33 @@
+Running web apps locally
+-----------------------------------------------------------------------------
+Introduction to running web apps locally
+
+What does it mean to run a web app locally?
+Local means you have a webs erver running on your own machine.
+It does the same as a real internet web server where for example a to-do-list web app runs. 
+
+Some prerequisites:
+You need a code editor. 
+You need also node.js. 
+We also need the open in browser extension. 
+
+Why do we need that? 
+As an example: go to todomvc.com. Download the github repo. We cloned it into our Section_11 folder. 
+
+Go to examples. Search for JQuery. Right click the index.html and click "open in default browser".
+You can also open in other browser like chrome. 
+What you see is that you are opening a filepath. 
+We open the file on our local machine as a web page. 
+We can do stuff with that file!
+Every functionality works fine on the client side. 
+
+Another example: go to react, and open the index.html again in chrome. 
+You see it does not work. 
+It is kind of there. You cannot actually do anything. The page is kind of broken. 
+We again opened a filepath, but this time it is using the React framework instead of JQuery, so it is building the web page in a different way. 
+
+In these sorts of situations, you need a web server.
+Next lesson: how to install a local web server using node and how to run these things loccally so that it all works. 
+
+-----------------------------------------------------------------------------
+Install the local http server and running locally
