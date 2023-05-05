@@ -31,3 +31,21 @@ Next lesson: how to install a local web server using node and how to run these t
 
 -----------------------------------------------------------------------------
 Install the local http server and running locally
+
+Go to npmjs.com/package/http-server 
+
+Get to a terminal and install it globally using:
+    npm install http-server -g
+This will be installed globally so we can call it from anywhere. 
+
+Now, open the react folder in the terminal. 
+Type in:
+    http-server
+
+Now, in your browser, type: 
+    localhost:8080/index.html 
+
+Now the react page opens fully functional!
+Crtrl + C in the terminal to exit the http-server. 
+
+Now we can run web apps locally instead the actual web server. 
