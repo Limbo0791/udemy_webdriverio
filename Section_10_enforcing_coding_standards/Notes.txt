@@ -83,9 +83,35 @@ We will fix these errors and update our rules in the next lecture.
 Just hover over errors and see what it says. 
 For example we see functions in use before they are defined. 
 Or alerts! eslint does not want alerts for some reason. 
+They are ugly but it is more of a warning. 
 
 Another one: Expected linebreaks to be LF but found CRLF. 
 This is for Unix type systems, not something we can do now. 
+On Windows there is no way of fixing the line break error.
+
+Another one: Unexpected string concatenation. 
+According to the airbnb standard, template literals are preferred. 
+They also have my preference. 
+
+Learn to google errors. 
+
+Start writing your code in the way it is expected. This saves error correction time. 
+
+The whole point of linting is to quickly see if you did something wrong and fixing it immediately. 
+That way your code will always be the way your team wants it to be, which is beneficial for readability and usability. 
+
+Also: do not use var. Use const or let. 
 
 -----------------------------------------------------------------------------
 Updating our rules
+
+Learning how to update rules. 
+Open the eslintrc.json file. It has a rule section. 
+
+Open the file, and also check online the eslint user guide (section: rules).
+
+We will keep the semi colons by the way. 
+
+We only need to check if we can somewhere fix the linebreak LF CRLF issue. 
+
+Bottom line: Using the eslint user guide you can set up your own ESLint rules in the eslintrc.json file. 
