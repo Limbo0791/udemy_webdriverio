@@ -14,7 +14,16 @@ When installing according to the course, use the following command:
 -----------------------------------------------------------------------------
 Installing webdriverIO and dependencies
 
+Make sure Nodje.JS is installed. 
 
+First off:
+    npm init 
+    enter through all the questions 
+        Now our package,json file has been created. 
+    npm install --save-dev @wdio/cli
+        We just installed hundreds of packages
+
+Now we need to create our configuration. 
 
 -----------------------------------------------------------------------------
 Adding ESLint and Prettier
