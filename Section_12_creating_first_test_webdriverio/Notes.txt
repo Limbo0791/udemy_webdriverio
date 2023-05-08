@@ -1,0 +1,36 @@
+Creating our first test in WebDriverIO
+-----------------------------------------------------------------------------
+Introduction to creating our first test in WebDriverIO
+
+We will use the-internet.herokuapp.com. 
+
+-----------------------------------------------------------------------------
+Important update: Version 6
+
+WebDriverIO has updated to version 6, however, in the course they still use version 5. 
+When installing according to the course, use the following command:
+    npm i webdriverio@5.22.1
+
+-----------------------------------------------------------------------------
+Installing webdriverIO and dependencies
+
+
+
+-----------------------------------------------------------------------------
+Adding ESLint and Prettier
+
+-----------------------------------------------------------------------------
+Writing the first test case
+
+-----------------------------------------------------------------------------
+Quick note about chrome driver
+
+-----------------------------------------------------------------------------
+Getting the current URL
+
+-----------------------------------------------------------------------------
+URL options
+
+-----------------------------------------------------------------------------
+Creating a better run script
+

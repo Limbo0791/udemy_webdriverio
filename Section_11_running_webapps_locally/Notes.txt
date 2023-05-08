@@ -49,3 +49,5 @@ Now the react page opens fully functional!
 Crtrl + C in the terminal to exit the http-server. 
 
 Now we can run web apps locally instead the actual web server. 
+
+Sidenote: we removed the entire todo list web app. We re installed also http-server. 
