@@ -11,6 +11,11 @@ WebDriverIO has updated to version 6, however, in the course they still use vers
 When installing according to the course, use the following command:
     npm i webdriverio@5.22.1
 
+This becomes important mostly for 'wait methods'. 
+Blog post about it:
+https://webdriver.io/blog/2020/03/26/webdriverio-v6-released.html
+
+
 -----------------------------------------------------------------------------
 Installing webdriverIO and dependencies
 
@@ -24,11 +29,62 @@ First off:
         We just installed hundreds of packages
 
 Now we need to create our configuration. 
+    Open the folder where the node modules resides
+    In the terminal: .\node_modules\.bin\wdio config 
+    Tests launched: local
+    Automation backend: local machine
+    No for Appium
+    Mocha for the framework 
+    Compiler: no
+    Autogenerate test files: yes
+    Where tests located: default suggestion is fine for Now
+    Page objects? yes
+    Base URL: localhost 
+    Reporter: spec
+    Service to test setup: chromedriver
+    npm install: yes
+
+We installed a lot of stuff, and saw some files popping up, the mos timportant being the wdio.conf.js config file!
+
+A bit of finetuning. 
+In the config file, scroll to 'max instances'. Change the value to 1, also in the capabilities. 
 
 -----------------------------------------------------------------------------
 Adding ESLint and Prettier
 
+First:
+    npm install eslint --save-dev
+
+Now we need to create a config file for ESLint. So we now what rules we need to follow. 
+To do that in the terminal:
+    .\node_modules\.bin\eslint --init
+        This will give a config wizard to set up ESLint configs. 
+        This command can also be run directly using 'npm init @eslint/config'
+    Check syntax and find problems. 
+    JavaScript modules
+    None of these
+    No Type script
+    Where does your code run? Unselect Browser, select node
+    Format for config file: JSON
+
+.eslintrc.json file has been created. 
+You can add rules if you like but now we will follow the recommended default. 
+
+Up next: make sure the ESlint and Prettier Code formatter extensions are installed. 
+
+Next up: setting up Prettier:
+    npm install prettier --save-dev
+Configure Prettier:
+    Ctrl Shift P
+    Format document
+
+We already have auto format on save. We also see ESLint is working properly. 
+
+To enable format on save: File -> Preferences -> Settings -> Enable "Editor: Format on Save"
+
+
 -----------------------------------------------------------------------------
+
 Writing the first test case
 
 -----------------------------------------------------------------------------
