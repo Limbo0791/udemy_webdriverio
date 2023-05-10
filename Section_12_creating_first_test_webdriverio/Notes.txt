@@ -82,20 +82,135 @@ We already have auto format on save. We also see ESLint is working properly.
 
 To enable format on save: File -> Preferences -> Settings -> Enable "Editor: Format on Save"
 
-
 -----------------------------------------------------------------------------
-
 Writing the first test case
+
+We made a new file: gettingStarted.spec.js. 
+This spec file is typical for unit testing. 
+We are using the mocha framework for tests. 
+
+Do not forget to add mocha to the environments in eslint, otbherwise it will not be recognized. 
+//The basic setup of a testcase
+describe('Getting started', function () {
+  it('should open a webpage', function () {});
+});
+
+First we are going to open a browser window.
+
+To ESLint we need to add more and more plugins. 
+Run the following command: 
+    npm install eslint-plugin-wdio
+
+Also we need to edit our ESLint file a bit. We added the plugins array and we added something to the extends array:
+ {
+  "plugins": ["wdio"],
+  "env": {
+    "es2021": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": ["eslint:recommended", "plugin:wdio/recommended"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {}
+}
+
+So with that out of the way we can continue with the test. 
+We will open the heroku app webpage. 
+
+Now we have the test finished, if you look in your wdio.conf.js file,
+You will see specs. This is the path where webdriverio is going to look to run tests. 
+Right now it says this:
+specs: ['./test/specs/**/*.js'],
+
+We do not have such a folder. We only have the test part. 
+Change that to the appropriate folder.
+
+recommended plugin/extension: Path IntelliSense. It will auto fill paths for you. 
+
+Running the test: 
+    .\node_modules\.bin\wdio wdio.conf.js
+Here we tell wdio which config file to run. 
+We saw a browser window opening and we have a passed test!
+
+In the video they have trouble with the chromedriver.
+This needs to be fixed in the package.json. 
+Your chromedriver version and chrome version should be the same. Otherwise your tests will not run. 
 
 -----------------------------------------------------------------------------
 Quick note about chrome driver
 
+We need chromedriver to work with chrome through our automated scripts. 
+
+Search for npm chromedriver to check the package. 
+They also have a version history. 
+
+YOur chrome version needs to allign with chromedriver. 
+
+Easiest way to fix the error is change the version of chromedriver directly in the package,json file,
+deleting the node_modules folder (and package lock json file) and then the command:
+    npm install 
+This will install everything again. According to the version you specified. 
+
+It is a common problem when working with selenium based automation tools. 
+Sometimes versions are mismatching because chrome is updating all the time. 
+
 -----------------------------------------------------------------------------
 Getting the current URL
+
+Lets grab the current URL of the page. 
+We use browser.getUrl() method for this. 
+
+ESLint is yapping that browser.pause() is not allowed. However, this is not an error in the code, just in the Linting. 
+
+This is handy when we naviagte through pages. 
 
 -----------------------------------------------------------------------------
 URL options
 
+One more thing to do with URLs. 
+You can do several things with URLs. 
+First we did browser.url() with the full URL path in parentheses. 
+You do not always have to do that. 
+You can also put a relative path in there. 
+In order for that to work you need to set the correct base url in the config. 
+baseurl is one of the parameters we can find in the config file. 
+
+There is another way of doing relative paths. Which will work on deeper sub pages like this one:
+https://the-internet.herokuapp.com/jqueryui/menu
+
+menu is 'too deep' for the browser.url() method. 
+TO circumvent this, our entire baseurl in the config will be the url as seen above. 
+Now we can put any sub page in the base url like this:
+browser.url('/jquery');
+
+If you have a longer base path and you want to go backwards, this is how you do it. 
+THis way you can manipulate the starting point of where the path is. 
+
+THe three different ways in summary:
+    1. The full URL (https://the-internet.herokuapp.com/jqueryui/menu)
+    2. Relative path where it appends to the end (the-internet.herokuapp.com  + abtest)
+    3. Relative where it adds to the root of the specified base url (https://the-internet.herokuapp.com/jqueryui/menu as base url and then browser.url('/jqueryui'). This will take you to the jqueryUI page. You work 'backwwards')
 -----------------------------------------------------------------------------
 Creating a better run script
+
+Our run script now: 
+     .\node_modules\.bin\wdio wdio.conf.js
+Not very user friendly. 
+
+Lets make it better. 
+Go to the package.json. 
+In the scripts section you have a thing called "test". Delete that. We do not need it. 
+Instead put there:
+    "test": " .\\node_modules\\.bin\\wdio",
+Use double slashes.
+
+Now we do not have to specify the whole path again. 
+To run the tests, use the following command:
+    npm test wdio.conf.js
+
+There, much cleaner!
 

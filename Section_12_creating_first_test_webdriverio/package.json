@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": " .\\node_modules\\.bin\\wdio",
     "wdio": "wdio run ./wdio.conf.js"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "@wdio/spec-reporter": "^8.10.0",
     "chromedriver": "^113.0.0",
     "eslint": "^8.40.0",
+    "eslint-plugin-wdio": "^8.8.7",
     "prettier": "^2.8.8",
     "wdio-chromedriver-service": "^8.1.1"
   }
