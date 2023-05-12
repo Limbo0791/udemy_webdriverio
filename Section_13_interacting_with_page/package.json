@@ -1,0 +1,20 @@
+{
+  "name": "section_13_interacting_with_page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ".\\node_modules\\.bin\\wdio",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.10.1",
+    "@wdio/local-runner": "^8.10.1",
+    "@wdio/mocha-framework": "^8.10.1",
+    "@wdio/spec-reporter": "^8.10.1",
+    "chromedriver": "^113.0.0",
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}

@@ -1,0 +1,18 @@
+Interacting with the page
+-----------------------------------------------------------------------------
+Introduction to Interacting with the page
+
+Creating some basic testcases in order to learn how to use WDIO. 
+Specifically interacting with elements on the page. 
+
+-----------------------------------------------------------------------------
+Using selectors to interact with elements.
+
+-----------------------------------------------------------------------------
+Using selectors to get text from elements
+
+-----------------------------------------------------------------------------
+Clicking check boxes
+
+-----------------------------------------------------------------------------
+Entering text into a field
