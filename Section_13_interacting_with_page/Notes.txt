@@ -5,6 +5,24 @@ Introduction to Interacting with the page
 Creating some basic testcases in order to learn how to use WDIO. 
 Specifically interacting with elements on the page. 
 
+First off we need a selector for our item. 
+Right click an element, inspect, and copy the selector. 
+
+Our selector: 
+    #content > ul > li:nth-child(1) > a
+THis is kind of the browsers best guess for the selector. 
+
+We can also copy the JS Path:
+document.querySelector("#content > ul > li:nth-child(1) > a")
+This is the JS version of the whole selector, allready selecting using document,querySelector. 
+We can paste that into our WDIO code, but we do not need the entire document.querySelector.
+All we need is the dollar sign like this:
+    $("#content > ul > li:nth-child(1) > a")
+
+
+
+
+
 -----------------------------------------------------------------------------
 Using selectors to interact with elements.
 
