@@ -19,12 +19,31 @@ We can paste that into our WDIO code, but we do not need the entire document.que
 All we need is the dollar sign like this:
     $("#content > ul > li:nth-child(1) > a")
 
+We have just created an action to click on an element. 
+You can store these selected elements in a avriable:
+    const abtestLink = $('#content > ul > li:nth-child(1) > a'); //dollar sign replaces documennt.queryselector
 
-
-
-
+Makes it easier to read. 
 -----------------------------------------------------------------------------
 Using selectors to interact with elements.
+
+Instead of clicking on an element, lets get the value of that element. 
+We can get text from an element like this:
+console.log(abtestLink.getText());
+This will get the text that is inside the element. 
+
+You can do that will all kinds of elements. 
+Another test:
+  it('Should inspect the h2 element', async function () {
+    await browser.url('/');
+    const h2Heading = await $('#content > h2');
+    console.log(h2Heading.getText());
+  });
+
+
+One of the things i found out in using webdriverIO is that it is often too fast to perfrom certian actions, like clicking on an element. 
+What helps is incorporating async and await in the test cases, making sure that the page has loaded in order to continue the next action. 
+
 
 -----------------------------------------------------------------------------
 Using selectors to get text from elements

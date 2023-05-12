@@ -3,7 +3,8 @@
   "env": {
     "es2021": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "browser": true
   },
   "extends": ["eslint:recommended", "plugin:wdio/recommended"],
   "overrides": [],
@@ -11,5 +12,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "no-trailing-whitespace": 0
+  }
 }
